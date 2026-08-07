@@ -1,12 +1,12 @@
 :root {
-  --fundo: #08121f;
-  --superficie: #10243a;
-  --superficie-clara: #183754;
-  --texto: #f5f8ff;
-  --texto-suave: #c2cede;
-  --destaque: #67e8f9;
-  --borda: #31516f;
-  --sucesso: #86efac;
+  --fundo: #0b121f;
+  --superficie: #141f32;
+  --superficie-curva: #1c2a42;
+  --texto: #f3f7f8;
+  --texto-suave: #93a4b6;
+  --destaque: #c261ff;
+  --borda: #2d3e58;
+  --botao: #ff478f;
 }
 
 * {
@@ -27,10 +27,10 @@ body {
 .pular-conteudo {
   position: absolute;
   left: 16px;
-  top: -80px;
+  top: -200px;
   padding: 12px 16px;
   background: var(--destaque);
-  color: #04131f;
+  color: #0b121f;
   font-weight: 700;
   border-radius: 8px;
 }
@@ -42,12 +42,12 @@ body {
 .cabecalho,
 main,
 footer {
-  width: min(900px, 92%);
-  margin-inline: auto;
+  width: min(880px, 92%);
+  margin: 32px auto;
 }
 
 .cabecalho {
-  padding: 52px 0 28px;
+  padding: 32px 0 24px;
 }
 
 .etiqueta {
@@ -58,9 +58,9 @@ footer {
 }
 
 h1 {
-  max-width: 760px;
-  margin: 0 0 12px;
-  font-size: clamp(2.2rem, 7vw, 4.6rem);
+  max-width: 700px;
+  margin: 8px 0 16px;
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
   line-height: 1;
 }
 
@@ -74,12 +74,12 @@ p,
 li,
 address {
   color: var(--texto-suave);
-  line-height: 1.65;
+  line-height: 1.5;
 }
 
 nav {
-  margin-top: 26px;
-  padding-top: 18px;
+  margin-top: 24px;
+  padding-top: 24px;
   border-top: 1px solid var(--borda);
 }
 
@@ -91,7 +91,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin: 0 18px 10px 0;
+  margin: 0 16px 16px 0;
 }
 
 a {
@@ -101,13 +101,13 @@ a {
 nav a {
   font-weight: 700;
   text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+  text-underline-offset: 3px;
 }
 
 section,
 aside,
 footer {
-  margin-bottom: 22px;
+  margin-bottom: 32px;
   padding: 24px;
   background: var(--superficie);
   border: 1px solid var(--borda);
@@ -115,9 +115,9 @@ footer {
 }
 
 article {
-  margin-top: 14px;
-  padding: 18px;
-  background: var(--superficie-clara);
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--superficie-curva);
   border-left: 4px solid var(--destaque);
   border-radius: 10px;
 }
@@ -128,25 +128,25 @@ ol {
 
 button {
   min-height: 48px;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border: 0;
   border-radius: 10px;
   background: var(--destaque);
-  color: #04131f;
+  color: #0b121f;
   font: inherit;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
 }
 
 button:hover,
 button:focus-visible {
-  filter: brightness(1.08);
+  filter: brightness(1.15);
 }
 
 #detalhesAtendimento {
-  margin-top: 18px;
-  padding: 16px;
-  border: 1px solid var(--sucesso);
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid var(--suave);
   border-radius: 10px;
 }
 
@@ -155,26 +155,26 @@ button:focus-visible {
 }
 
 footer {
-  margin-bottom: 38px;
+  margin-bottom: 80px;
 }
 
 address {
   font-style: normal;
 }
 
-@media (max-width: 520px) {
+@media (min-width: 520px) {
   .cabecalho {
-    padding-top: 34px;
+    padding-top: 64px;
   }
 
   section,
   aside,
   footer {
-    padding: 18px;
+    padding: 32px;
   }
 
   nav li {
-    display: block;
+    display: inline;
     margin-right: 0;
   }
 

@@ -1,10 +1,20 @@
-const botaoAtendimento = document.querySelector('#mostrarAtendimento');
-const detalhesAtendimento = document.querySelector('#detalhesAtendimento');
+const formulario = document.querySelector('#cadastroCliente');
+const statusCadastro = document.querySelector('#statusCadastro');
 
-botaoAtendimento.addEventListener('click', () => {
-  const estaAberto = botaoAtendimento.getAttribute('aria-expanded') === 'true';
+formulario.addEventListener('submit', (evento) => {
+  evento.preventDefault();
 
-  botaoAtendimento.setAttribute('aria-expanded', String(!estaAberto));
-  detalhesAtendimento.hidden = estaAberto;
-  botaoAtendimento.textContent = estaAberto ? 'Mostrar horários' : 'Ocultar horários';
+  const dados = new FormData(formulario);
+  const nome = dados.get('nome');
+  const servico = formulario.elements.servico.options[formulario.elements.servico.selectedIndex].text;
+  const retorno = dados.get('retorno');
+
+  statusCadastro.textContent = `Cadastro de ${nome} recebido. Interesse: ${servico}. Retorno preferido: ${retorno}.`;
+  statusCadastro.hidden = false;
+  statusCadastro.focus();
+});
+
+formulario.addEventListener('reset', () => {
+  statusCadastro.hidden = true;
+  statusCadastro.textContent = '';
 });
